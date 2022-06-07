@@ -3,52 +3,57 @@ import './App.css';
 import Demo from './Components/Demo';
 import Gaurav from './Components/Gaurav';
 import Hi from './Components/Hi';
+import Country from './container/Country';
+import Countryfun from './container/Countryfun';
+import Time from './Time/Time';
+import Timefun from './container/Timefun';
+import InDbtn from './container/InDbtn';
 
 
 function App() {
   // 1st task----------------------------------------------------------------
-  const medicine = [
-    {
-      id: 101,
-      name: 'Abacavir',
-      quantity: 25,
-      price: 150,
-      expiry: 2022,
-      status: true
-    },
-    {
-      id: 102,
-      name: 'Eltrombopag',
-      quantity: 90,
-      price: 550,
-      expiry: 2021,
-      status: true
-    },
-    {
-      id: 103,
-      name: 'Meloxicam',
-      quantity: 85,
-      price: 450,
-      expiry: 2025,
-      status: false
-    },
-    {
-      id: 104,
-      name: 'Allopurinol',
-      quantity: 50,
-      price: 600,
-      expiry: 2023,
-      status: true
-    },
-    {
-      id: 105,
-      name: 'Phenytoin',
-      quantity: 63,
-      price: 250,
-      expiry: 2021,
-      status: false
-    }
-  ];
+  // const medicine = [
+  //   {
+  //     id: 101,
+  //     name: 'Abacavir',
+  //     quantity: 25,
+  //     price: 150,
+  //     expiry: 2022,
+  //     status: true
+  //   },
+  //   {
+  //     id: 102,
+  //     name: 'Eltrombopag',
+  //     quantity: 90,
+  //     price: 550,
+  //     expiry: 2021,
+  //     status: true
+  //   },
+  //   {
+  //     id: 103,
+  //     name: 'Meloxicam',
+  //     quantity: 85,
+  //     price: 450,
+  //     expiry: 2025,
+  //     status: false
+  //   },
+  //   {
+  //     id: 104,
+  //     name: 'Allopurinol',
+  //     quantity: 50,
+  //     price: 600,
+  //     expiry: 2023,
+  //     status: true
+  //   },
+  //   {
+  //     id: 105,
+  //     name: 'Phenytoin',
+  //     quantity: 63,
+  //     price: 250,
+  //     expiry: 2021,
+  //     status: false
+  //   }
+  // ];
 
   // Medicine.map((m) => {
   //   for (let k in m) {
@@ -57,43 +62,43 @@ function App() {
   // });
 
   // 2nd task----------------------------------------------------------------------
-  const Employee = [
-    {
-      name: "amit",
-      age: 35,
-      salary: 40000,
-      bonus: 1000,
-      status: true
-    },
-    {
-      name: "ajay",
-      age: 25,
-      salary: 38000,
-      bonus: 2000,
-      status: false
-    },
-    {
-      name: "mayur",
-      age: 23,
-      salary: 50000,
-      bonus: 500,
-      status: true
-    },
-    {
-      name: "jay",
-      age: 29,
-      salary: 35000,
-      bonus: 600,
-      status: true
-    },
-    {
-      name: "raj",
-      age: 33,
-      salary: 22000,
-      bonus: 2000,
-      status: true
-    },
-  ]
+  // const Employee = [
+  //   {
+  //     name: "amit",
+  //     age: 35,
+  //     salary: 40000,
+  //     bonus: 1000,
+  //     status: true
+  //   },
+  //   {
+  //     name: "ajay",
+  //     age: 25,
+  //     salary: 38000,
+  //     bonus: 2000,
+  //     status: false
+  //   },
+  //   {
+  //     name: "mayur",
+  //     age: 23,
+  //     salary: 50000,
+  //     bonus: 500,
+  //     status: true
+  //   },
+  //   {
+  //     name: "jay",
+  //     age: 29,
+  //     salary: 35000,
+  //     bonus: 600,
+  //     status: true
+  //   },
+  //   {
+  //     name: "raj",
+  //     age: 33,
+  //     salary: 22000,
+  //     bonus: 2000,
+  //     status: true
+  //   },
+  // ]
 
   // Employee.map((E) => {
   //   for (let k in E) {
@@ -251,24 +256,24 @@ function App() {
 
   //   }
   // }
-  let medicineM = medicine.filter((m) =>  m.status === true && m.expiry >= 2022 );
-  let totalPrice = medicineM.reduce((acc,m) => acc + m.price ,0);
+  // let medicineM = medicine.filter((m) =>  m.status === true && m.expiry >= 2022 );
+  // let totalPrice = medicineM.reduce((acc,m) => acc + m.price ,0);
 
-  let employee = Employee.filter((e,i) =>  e.status === true);
-  let ANS = employee.reduce((acc,e,i) => acc + e.bonus + e.salary ,0);
+  // let employee = Employee.filter((e,i) =>  e.status === true);
+  // let ANS = employee.reduce((acc,e,i) => acc + e.bonus + e.salary ,0);
   return (
     <div className="App">
-      <table border="1">
-        <tr>
-           <td>Id</td>
-           <td>Name</td>
-           <td>Quantity</td>
-           <td>Price</td>
-           <td>Expiry</td>
-           <td>Status</td>
-           <td>total price</td>
-        </tr>
-      {
+        {/* <table border="1">
+         <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Expiry</td>
+            <td>Status</td>
+            <td>total price</td>
+         </tr>
+       {
         medicineM.map((m,i) => {
           let {id,name,quantity,price,expiry,status,ans} = m
           return(
@@ -308,13 +313,19 @@ function App() {
                  <td>{bonus}</td>
                  <td>{status.toString()}</td>
                  <td>{salary + bonus}</td>
-                 {i === 0 ? <td rowSpan="2">{ANS}</td> : null}
+                 {i === 0 ? <td rowSpan="4">{ANS}</td> : null}
                  
               </tr>
             )
           })
-        }
-      </table>
+        } 
+      </table> */}
+      {/* <Country/>
+      
+      <Countryfun /> */}
+      {/* <Time /> */}
+      {/* <Timefun /> */}
+      <InDbtn />
     </div>
   );
 }
